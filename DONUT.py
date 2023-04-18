@@ -71,7 +71,6 @@ def render(A=0, B=0):
                     output[yp][xp] = chars[lindex]
 
     print('\x1b[H')
-    # os.system('clear') is also ok.
     for row in output:
         for col in row:
             print(col, end='')
