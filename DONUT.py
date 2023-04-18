@@ -10,7 +10,6 @@ R1 = 1
 R2 = 2
 K2 = 5
 K1 = screen_width*R1 / 15*(R1+R2)
-# Precompute a blank screen
 OUTPUT = np.empty((screen_height, screen_width), dtype=str)
 for i in range(screen_height):
     for j in range(screen_width):
@@ -19,12 +18,9 @@ ZBUFFER = np.zeros((screen_height, screen_width))
 
 light_source = np.array([0, -1, -1])
 
-# Original: chars = '.,-~:;!=*#$@'
 chars = '_.,-:;!=+?$W#@'
 
 def render(A=0, B=0):
-
-    # Refresh the screen.
     output = OUTPUT.copy()
     zbuffer = ZBUFFER.copy()
 
